@@ -7,6 +7,7 @@ RemainAfterExit=yes
 ExecStart=/bin/cp -dR -t / /sysroot/config/.
 ExecStart=/bin/chown -R core:core /var/home/core
 ExecStart=/bin/chmod -R u=rwX,go= /var/home/core/.ssh
+ExecStart=/bin/chmod -R u=rwX,go= /var/roothome/.ssh
 ExecStart=/bin/chmod -R u=rwX,go= /etc/NetworkManager/system-connections
 ExecStart=/bin/touch /var/lib/%N.stamp
 [Install]
