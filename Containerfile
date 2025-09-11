@@ -1,4 +1,5 @@
-FROM quay.io/fedora/fedora-bootc:latest
+ARG BASE_VERSION=:latest
+FROM quay.io/fedora/fedora-bootc$BASE_VERSION
 RUN groupadd -r sudo && \
     useradd -m -G sudo core && \
     su core -c 'mkdir -m u=rwX,go= ~/.ssh' && \

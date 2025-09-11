@@ -1,9 +1,7 @@
 on:
   push:
     branches:
-      - master
-  schedule:
-    - cron: '0 4 * * *'
+    - master
   workflow_dispatch:
 permissions:
   packages: write
@@ -12,6 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    - run: podman build --pull=always --tag "localhost/${{ github.repository }}" .
+    - run: podman build --pull=always --build-arg-file=argfile.conf --tag "localhost/${{ github.repository }}" .
     - run: echo "${{ secrets.GITHUB_TOKEN }}" | podman login ghcr.io -u "${{ github.actor }}" --password-stdin
     - run: podman push "localhost/${{ github.repository }}" "ghcr.io/${{ github.repository }}:latest"

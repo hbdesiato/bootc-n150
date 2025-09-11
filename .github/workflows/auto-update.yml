@@ -1,0 +1,20 @@
+on:
+  schedule:
+  - cron: '0 4 * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - run: |
+        curl -sI -H 'Accept: application/vnd.oci.image.manifest.v1+json' https://quay.io/v2/fedora/fedora-bootc/manifests/latest | \
+        grep -i 'docker-content-digest:' | awk '{print "BASE_VERSION=@"$2}' > argfile.conf
+    - run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+    - run: |
+        git commit -a -m "auto-update" || echo "Nothing to commit"
+        git push
