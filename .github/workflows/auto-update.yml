@@ -9,6 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.PAT_TOKEN }}
     - run: |
         curl -sI -H 'Accept: application/vnd.oci.image.manifest.v1+json' https://quay.io/v2/fedora/fedora-bootc/manifests/latest | \
         grep -i 'docker-content-digest:' | awk '{print "BASE_VERSION=@"$2}' > argfile.conf
