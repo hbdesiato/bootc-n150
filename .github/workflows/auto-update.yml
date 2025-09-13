@@ -18,5 +18,11 @@ jobs:
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
     - run: |
-        git commit -a -m "auto-update" || echo "Nothing to commit"
+        if git commit -a -m "auto-update"; then
+          echo "Base image changed, skipping package check."
+        else
+          podman run --rm --pull=always "ghcr.io/${{ github.repository }}:latest" \
+            bash -c 'dnf --repo=updates list --available $(cat /usr/share/misc/additional_packages.txt)' > available_packages.txt
+          git commit -a -m "auto-update" || echo "Nothing to commit"
+        fi
         git push
