@@ -1,1 +1,1 @@
-ghcr.io/hbdesiato/bootc-n150@sha256:f74438deb2f17e844896184bcf72e926aac388847e5ef8d45440d02468c7c88d
+ghcr.io/hbdesiato/bootc-n150@sha256:dfb65281abee48ff10aeb39ebd97d919888188a816edb34aff0d7382efc661de
