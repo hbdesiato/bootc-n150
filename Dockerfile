@@ -1,4 +1,5 @@
-FROM quay.io/fedora/fedora-bootc:latest
+ARG BASE_IMAGE=quay.io/fedora/fedora-bootc:latest
+FROM $BASE_IMAGE
 COPY packages.txt /usr/share/misc/
 RUN groupadd -r sudo && \
     useradd -m -G sudo core && \
