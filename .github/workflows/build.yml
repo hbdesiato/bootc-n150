@@ -36,6 +36,5 @@ jobs:
         context: .
         push: true
         tags: ghcr.io/${{ github.repository }}:latest
-        build-args:
-        - BASE_IMAGE=${{ env.BASE_IMAGE }}
+        build-args: BASE_IMAGE=${{ env.BASE_IMAGE }}
 
