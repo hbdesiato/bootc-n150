@@ -1,5 +1,0 @@
-Available packages
-NetworkManager-wifi.x86_64 1:1.52.1-1.fc42   updates
-dnsmasq.x86_64             2.90-6.fc42       updates
-wireless-regdb.noarch      2025.02.20-1.fc42 updates
-wpa_supplicant.x86_64      1:2.11-6.fc42     updates
