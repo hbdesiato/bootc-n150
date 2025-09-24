@@ -25,7 +25,7 @@ jobs:
         context: .
         push: true
         tags: ghcr.io/${{ github.repository }}:latest
-    - run: docker image inspect ghcr.io/${{ github.repository }}:latest | jq -r .[0].Digest > digest.txt
+    - run: docker image inspect ghcr.io/${{ github.repository }}:latest | jq -r .[0].RepoDigests[0] > digest.txt
     - run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
