@@ -1,5 +1,5 @@
 Available packages
 NetworkManager-wifi.x86_64 1:1.54.3-2.fc43   updates
-dnsmasq.x86_64             2.91-1.fc43       updates
+dnsmasq.x86_64             2.92-1.fc43       updates
 iw.x86_64                  6.17-1.fc43       updates
 wireless-regdb.noarch      2025.10.07-1.fc43 updates
