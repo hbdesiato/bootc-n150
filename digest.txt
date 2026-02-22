@@ -1,1 +1,1 @@
-quay.io/fedora/fedora-bootc@sha256:69b6a260efba5ee180fce21959665dcba4e6d360cfff166daf74a5b14ff418e9
+quay.io/fedora/fedora-bootc@sha256:dd6c2f7680f0f1125e4a7b04ca1ac23a3ff7a2df97d5c93fd5d6cc9198628312
