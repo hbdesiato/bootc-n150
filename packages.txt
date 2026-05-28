@@ -1,3 +1,4 @@
 Available packages
-dnsmasq.x86_64        2.92rel2-9.fc44   updates
-wireless-regdb.noarch 2026.03.18-1.fc44 updates
+NetworkManager-wifi.x86_64 1:1.56.1-1.fc44   updates
+dnsmasq.x86_64             2.92rel2-9.fc44   updates
+wireless-regdb.noarch      2026.03.18-1.fc44 updates
